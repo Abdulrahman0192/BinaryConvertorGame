@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="480dp"
+        android:layout_height="300dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/im1"
+
+            >
+
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/im3"
+
+            >
+
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="176dp"
+            android:layout_marginTop="40dp"
+            android:rotationY="160"
+
+            android:src="@drawable/im3">
+
+
+        </ImageView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="27dp"
+            android:fontFamily="@font/segoeuib"
+            android:text="learn more"
+            android:textColor="#000000"
+            android:textSize="29sp"
+            android:textStyle="bold">
+
+
+        </TextView>
+
+        <Button
+            android:layout_width="240dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="220dp"
+            android:background="@drawable/btn_design2"
+            android:fontFamily="@font/segoeuib"
+            android:text="Read"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+
+        </Button>
+
+
+    </android.support.v7.widget.CardView>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:scrollbarThumbHorizontal="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="330dp"
+                android:layout_height="250dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardBackgroundColor="#FCFDFF"
+                app:cardCornerRadius="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.92">
+
+                <LinearLayout
+                    android:layout_width="339dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_design">
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/segoeuib"
+                    android:gravity="center"
+                    android:text="Decimal"
+                    android:textColor="#FFFFFF"
+                    android:textSize="45sp">
+
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="67dp"
+                    android:fontFamily="@font/segoeuib"
+                    android:text="To"
+                    android:textColor="#FFFFFF"
+                    android:textSize="35sp">
+
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="110dp"
+                    android:fontFamily="@font/segoeuib"
+                    android:text="Binary"
+                    android:textColor="#000000"
+                    android:textSize="35sp">
+
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/GameOne"
+                    android:layout_width="220dp"
+                    android:layout_height="39dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="185dp"
+                    android:background="@drawable/btn_design2"
+                    android:fontFamily="@font/segoeuib"
+                    android:text="START"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold">
+
+
+                </Button>
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="330dp"
+                android:layout_height="250dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="20dp"
+                app:cardBackgroundColor="#FCFDFF"
+                app:cardCornerRadius="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.92">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_design">
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/segoeuib"
+                    android:gravity="center"
+                    android:text="Decimal"
+                    android:textColor="#FFFFFF"
+                    android:textSize="45sp">
+
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="67dp"
+                    android:fontFamily="@font/segoeuib"
+                    android:text="To"
+                    android:textColor="#FFFFFF"
+                    android:textSize="35sp">
+
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="110dp"
+                    android:fontFamily="@font/segoeuib"
+                    android:text="Binary"
+                    android:textColor="#000000"
+                    android:textSize="35sp">
+
+
+                </TextView>
+
+                <Button
+                    android:layout_width="220dp"
+                    android:layout_height="39dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="185dp"
+                    android:background="@drawable/btn_design2"
+                    android:fontFamily="@font/segoeuib"
+                    android:text="START"
+                    android:textColor="#FFFBFB"
+                    android:textSize="16sp"
+                    android:textStyle="bold">
+
+
+                </Button>
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoeuib"
+        android:text="Test yourself"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.559">
+
+
+    </TextView>
+
+</android.support.constraint.ConstraintLayout>
