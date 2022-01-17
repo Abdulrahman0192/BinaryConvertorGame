@@ -1,9 +1,11 @@
 package com.example.bgame;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,8 +18,8 @@ public Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, submit, next;
 public TextView GameNumber;
 public int c1, c2, c3, c4, c5, c6, c7, c8, result;
 public int Number;
-public TextView counter;
-public int increment = 0;
+ImageView life1, life2, life3;
+int checker = 0;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +36,15 @@ protected void onCreate(Bundle savedInstanceState) {
     btn7 = findViewById(R.id.btn7);
     btn8 = findViewById(R.id.btn8);
     submit = findViewById(R.id.submit);
-    counter = findViewById(R.id.counter);
+    life1 = findViewById(R.id.life1);
+    life2 = findViewById(R.id.life2);
+    life3 = findViewById(R.id.life3);
 
 
     Random random = new Random();
 
     Number = random.nextInt(255) + 1;
-    GameNumber.setText(Number+"");
+    GameNumber.setText(Number + "");
 
     btn1.setOnClickListener(view->{
 
@@ -204,6 +208,31 @@ protected void onCreate(Bundle savedInstanceState) {
         } else {
 
             Toast.makeText(this, "False", Toast.LENGTH_SHORT).show();
+            checker++;
+            if (checker == 1) {
+
+                life1.setColorFilter(Color.RED);
+
+            }//end if
+
+            else if (checker == 2) {
+
+                life2.setColorFilter(Color.RED);
+
+            }//end else
+
+            else {
+
+                life3.setColorFilter(Color.RED);
+
+                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+
+                startActivity(intent);
+                finish();
+
+            }//end else
+
+
         }//end else
         GameMode();
 
@@ -212,47 +241,27 @@ protected void onCreate(Bundle savedInstanceState) {
 }//end onCreate
 
 public void GameMode() {
-    if (increment >= 9) {
 
-        Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+    next.setEnabled(true);
+    submit.setEnabled(false);
 
-        startActivity(intent);
+    next.setOnClickListener(view->{
 
-        finish();
+        if (next.isPressed()) {
 
-    }//end if
+            Random random1 = new Random();
 
-    else {
+            int updater = random1.nextInt(255) + 1;
 
-        next.setEnabled(true);
-        submit.setEnabled(false);
+            GameNumber.setText(updater + "");
 
-
-        next.setOnClickListener(view->{
-
-            if (next.isPressed()) {
-
-                increment++;
-
-                counter.setText(increment + "");
-
-                submit.setEnabled(true);
-                next.setEnabled(false);
-
-                GameNumber.setText(Number+"");
+            next.setEnabled(false);
+            submit.setEnabled(true);
 
 
-                Random random1 = new Random();
+        }//end if
 
-                Number = random1.nextInt(255) + 1;
-                GameNumber.setText(Number+"");
-
-            }//end if
-
-
-        });
-
-    }//end else
+    });
 
 }//end method
 
