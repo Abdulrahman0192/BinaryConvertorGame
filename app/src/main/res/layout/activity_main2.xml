@@ -18,7 +18,7 @@
         android:freezesText="true"
         android:text="0"
         android:textColor="@drawable/text_color"
-        android:textSize="24sp"
+        android:textSize="27sp"
         app:layout_constraintBottom_toTopOf="@+id/GameNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.903"

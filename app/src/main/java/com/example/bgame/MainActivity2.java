@@ -19,7 +19,9 @@ public TextView GameNumber;
 public int c1, c2, c3, c4, c5, c6, c7, c8, result;
 public int Number;
 ImageView life1, life2, life3;
+TextView points;
 int checker = 0;
+int increment = 0;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +41,12 @@ protected void onCreate(Bundle savedInstanceState) {
     life1 = findViewById(R.id.life1);
     life2 = findViewById(R.id.life2);
     life3 = findViewById(R.id.life3);
+    points = findViewById(R.id.points);
 
 
     Random random = new Random();
 
-    Number = random.nextInt(255) + 1;
+    Number = random.nextInt(20) + 1;
     GameNumber.setText(Number + "");
 
     btn1.setOnClickListener(view->{
@@ -204,6 +207,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
             Toast.makeText(this, "True", Toast.LENGTH_SHORT).show();
 
+            increment += random.nextInt(10) + 1;
+            points.setText(increment + "");
+
 
         } else {
 
@@ -226,7 +232,7 @@ protected void onCreate(Bundle savedInstanceState) {
                 life3.setColorFilter(Color.RED);
 
                 Intent intent = new Intent(MainActivity2.this, MainActivity.class);
-
+                intent.putExtra("points", increment);
                 startActivity(intent);
                 finish();
 
@@ -251,7 +257,7 @@ public void GameMode() {
 
             Random random1 = new Random();
 
-            int updater = random1.nextInt(255) + 1;
+            int updater = random1.nextInt(20)+1;
 
             GameNumber.setText(updater + "");
 

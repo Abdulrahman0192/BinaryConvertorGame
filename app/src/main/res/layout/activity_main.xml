@@ -7,6 +7,7 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,11 +21,12 @@
         android:fontFamily="@font/segoeuib"
         android:text="Binary"
         android:textColor="#2196F3"
-        android:textSize="60sp"
+        android:textSize="65sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52">
 
     </TextView>
 
@@ -36,15 +38,15 @@
         android:fontFamily="@font/segoeuib"
         android:text="dev social media"
         android:textColor="#2196F3"
-        android:textSize="15sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.913">
+        app:layout_constraintVertical_bias="0.911">
 
     </TextView>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,18 +54,20 @@
         android:layout_gravity="center|top"
         android:layout_marginStart="177dp"
         android:layout_marginLeft="177dp"
-        android:layout_marginTop="173dp"
+        android:layout_marginTop="195dp"
         android:layout_marginEnd="178dp"
         android:layout_marginRight="178dp"
         android:layout_marginBottom="478dp"
         android:fontFamily="@font/segoeuib"
         android:text="To"
         android:textColor="#2196F3"
-        android:textSize="50sp"
+        android:textSize="55sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48">
 
     </TextView>
 
@@ -74,26 +78,26 @@
         android:layout_gravity="center|top"
         android:layout_marginStart="111dp"
         android:layout_marginLeft="111dp"
-        android:layout_marginTop="238dp"
+        android:layout_marginTop="255dp"
         android:layout_marginEnd="111dp"
         android:layout_marginRight="111dp"
         android:layout_marginBottom="413dp"
         android:fontFamily="@font/segoeuib"
         android:text="Decimal"
         android:textColor="#2D2F30"
-        android:textSize="50sp"
+        android:textSize="55sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
     </TextView>
 
-
     <Button
         android:id="@+id/GameOne"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:background="@drawable/btn_design2"
         android:fontFamily="@font/segoeuib"
@@ -102,30 +106,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537">
-
-
-    </Button>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:background="@drawable/btn_design2"
-        android:fontFamily="@font/segoeuib"
-        android:text="HIGH SCORE"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687">
+        app:layout_constraintVertical_bias="0.59">
 
 
     </Button>
@@ -150,13 +134,30 @@
         android:src="@drawable/instagram"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.86">
 
 
     </ImageView>
+
+    <TextView
+        android:id="@+id/points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:fontFamily="@font/segoeuib"
+        android:text="Highest score: 0"
+        android:textColor="#80242525"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.692">
+
+    </TextView>
 
 
 </android.support.constraint.ConstraintLayout>
