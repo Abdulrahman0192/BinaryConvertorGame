@@ -14,19 +14,42 @@ import java.util.Random;
 public class MainActivity2 extends AppCompatActivity {
 
 
-public Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, submit, next;
-public TextView GameNumber;
-public int c1, c2, c3, c4, c5, c6, c7, c8, result;
-public int Number;
-ImageView life1, life2, life3;
-TextView points;
-int checker = 0;
-int increment = 0;
+private final Random random = new Random();
+private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, submit, next;
+private TextView GameNumber, points, question;
+private int c1;
+private int c2;
+private int c3;
+private int c4;
+private int c5;
+private int c6;
+private int c7;
+private int c8;
+private int result;
+private int increment = 0;
+private int checker = 0;
+private int question_counter = 1;
+private ImageView life1, life2, life3;
+private long backBtn = 0;
+
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main2);
+
+    getting_ID();
+    GameMode();
+
+    int game_start_number = random.nextInt(20) + 1;
+
+    question.setText(String.valueOf(game_start_number));
+
+
+}//end onCreate
+
+
+private void getting_ID() {
     GameNumber = findViewById(R.id.GameNumber);
     next = findViewById(R.id.next);
     btn1 = findViewById(R.id.btn1);
@@ -42,12 +65,11 @@ protected void onCreate(Bundle savedInstanceState) {
     life2 = findViewById(R.id.life2);
     life3 = findViewById(R.id.life3);
     points = findViewById(R.id.points);
+    question = findViewById(R.id.question_counter);
 
+}//end method
 
-    Random random = new Random();
-
-    Number = random.nextInt(20) + 1;
-    GameNumber.setText(Number + "");
+private void GameMode() {
 
     btn1.setOnClickListener(view->{
 
@@ -207,9 +229,9 @@ protected void onCreate(Bundle savedInstanceState) {
 
             Toast.makeText(this, "True", Toast.LENGTH_SHORT).show();
 
-            increment += random.nextInt(10) + 1;
-            points.setText(increment + "");
+            increment += 10;
 
+            points.setText(String.valueOf(increment));
 
         } else {
 
@@ -240,24 +262,27 @@ protected void onCreate(Bundle savedInstanceState) {
 
 
         }//end else
-        GameMode();
+        GameEngine();
 
     });
 
-}//end onCreate
 
-public void GameMode() {
+}//end method
+
+private void GameEngine() {
 
     next.setEnabled(true);
     submit.setEnabled(false);
-
     next.setOnClickListener(view->{
 
         if (next.isPressed()) {
 
             Random random1 = new Random();
 
-            int updater = random1.nextInt(20)+1;
+            int updater = random1.nextInt(20) + 1;
+
+            question_counter++;
+            question.setText("Question " + question_counter);
 
             GameNumber.setText(updater + "");
 
@@ -271,5 +296,27 @@ public void GameMode() {
 
 }//end method
 
+@Override
+public void onBackPressed() {
+
+    long time = System.currentTimeMillis();
+
+    if (time - backBtn > 2000) {
+
+        backBtn = time;
+
+        Toast.makeText(this, "Click again to return", Toast.LENGTH_SHORT).show();
+
+    }//end if
+
+    else {
+        Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+
+    }//end else
+
+
+}//end method
 
 }//end class

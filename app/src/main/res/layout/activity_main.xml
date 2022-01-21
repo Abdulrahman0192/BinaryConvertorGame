@@ -97,7 +97,7 @@
     <Button
         android:id="@+id/GameOne"
         android:layout_width="290dp"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:layout_gravity="center"
         android:background="@drawable/btn_design2"
         android:fontFamily="@font/segoeuib"
@@ -109,12 +109,13 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59">
+        app:layout_constraintVertical_bias="0.584">
 
 
     </Button>
 
     <ImageView
+        android:id="@+id/twitter_account"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/twitter"
@@ -129,6 +130,7 @@
     </ImageView>
 
     <ImageView
+        android:id="@+id/instagram_account"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/instagram"
