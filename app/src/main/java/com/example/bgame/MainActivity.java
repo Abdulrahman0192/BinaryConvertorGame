@@ -2,21 +2,27 @@ package com.example.bgame;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-private Button GameOne;
+private LinearLayout GameOne;
+private View shine;
 private TextView points;
 private int result = 0, getData = 0;
 private ImageView twitter_account, instagram_account;
 private long onBackState = 0;
+private MediaPlayer mediaPlayer;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,8 @@ protected void onCreate(Bundle savedInstanceState) {
 
     getting_ID();
     social_media();
+    soundtrack();
+    handling_animation();
     Intent intent = getIntent();
     getData = intent.getIntExtra("points", 0);
 
@@ -55,6 +63,8 @@ private void getting_ID() {
     points = findViewById(R.id.points);
     twitter_account = findViewById(R.id.twitter_account);
     instagram_account = findViewById(R.id.instagram_account);
+    shine = findViewById(R.id.shine);
+
 
 }//end method
 
@@ -82,12 +92,16 @@ private void UpdateData(int holder) {
 
 private void social_media() {
 
+    Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.fade_in);
+
     twitter_account.setOnClickListener(view->{
+
+
+        twitter_account.startAnimation(animation);
 
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/d7om37"));
 
         startActivity(intent);
-        finish();
 
 
     });
@@ -96,8 +110,9 @@ private void social_media() {
 
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://instagram.com/d7om37"));
 
+        instagram_account.startAnimation(animation);
+
         startActivity(intent);
-        finish();
 
 
     });
@@ -120,8 +135,41 @@ public void onBackPressed() {
     else {
 
         finish();
+        mediaPlayer.stop();
 
     }//end else
 
 }//end method
+
+private void soundtrack() {
+
+    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.background_sound);
+    mediaPlayer.start();
+
+}//end method
+
+private void handling_animation() {
+
+    Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.left_right);
+    shine.startAnimation(animation);
+    animation.setAnimationListener(new Animation.AnimationListener() {
+        @Override
+        public void onAnimationStart(Animation animation) {
+
+        }//end method
+
+        @Override
+        public void onAnimationEnd(Animation animation) {
+            shine.startAnimation(animation);
+        }//end method
+
+        @Override
+        public void onAnimationRepeat(Animation animation) {
+
+        }//end method
+    });
+
+
+}//end method
+
 }//end class

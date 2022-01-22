@@ -40,10 +40,14 @@ protected void onCreate(Bundle savedInstanceState) {
 
     getting_ID();
     GameMode();
+    next.setTextColor(Color.BLACK);
+    submit.setTextColor(Color.WHITE);
+    next.setEnabled(false);
+    submit.setEnabled(true);
 
     int game_start_number = random.nextInt(20) + 1;
 
-    question.setText(String.valueOf(game_start_number));
+    GameNumber.setText(String.valueOf(game_start_number));
 
 
 }//end onCreate
@@ -273,6 +277,8 @@ private void GameEngine() {
 
     next.setEnabled(true);
     submit.setEnabled(false);
+    next.setTextColor(Color.WHITE);
+    submit.setTextColor(Color.BLACK);
     next.setOnClickListener(view->{
 
         if (next.isPressed()) {
@@ -288,6 +294,8 @@ private void GameEngine() {
 
             next.setEnabled(false);
             submit.setEnabled(true);
+            next.setTextColor(Color.BLACK);
+            submit.setTextColor(Color.WHITE);
 
 
         }//end if
