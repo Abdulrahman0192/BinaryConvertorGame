@@ -22,7 +22,7 @@ private TextView points;
 private int result = 0, getData = 0;
 private ImageView twitter_account, instagram_account;
 private long onBackState = 0;
-private MediaPlayer mediaPlayer;
+
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
     getting_ID();
     social_media();
-    soundtrack();
     handling_animation();
     Intent intent = getIntent();
     getData = intent.getIntExtra("points", 0);
@@ -135,18 +134,12 @@ public void onBackPressed() {
     else {
 
         finish();
-        mediaPlayer.stop();
 
     }//end else
 
 }//end method
 
-private void soundtrack() {
 
-    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.background_sound);
-    mediaPlayer.start();
-
-}//end method
 
 private void handling_animation() {
 

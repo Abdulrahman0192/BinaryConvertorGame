@@ -2,6 +2,7 @@ package com.example.bgame;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
@@ -31,7 +32,7 @@ private int checker = 0;
 private int question_counter = 1;
 private ImageView life1, life2, life3;
 private long backBtn = 0;
-
+private MediaPlayer mediaPlayer;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ protected void onCreate(Bundle savedInstanceState) {
     int game_start_number = random.nextInt(20) + 1;
 
     GameNumber.setText(String.valueOf(game_start_number));
+    soundtrack();
 
 
 }//end onCreate
@@ -269,6 +271,7 @@ private void GameMode() {
                     Intent intent = new Intent(MainActivity2.this, MainActivity.class);
                     intent.putExtra("points", increment);
                     startActivity(intent);
+                    mediaPlayer.stop();
                     finish();
 
                 }//end else
@@ -340,10 +343,19 @@ public void onBackPressed() {
     else {
         Intent intent = new Intent(MainActivity2.this, MainActivity.class);
         startActivity(intent);
+        mediaPlayer.stop();
         finish();
 
     }//end else
 
+
+}//end method
+
+private void soundtrack() {
+
+    mediaPlayer = MediaPlayer.create(MainActivity2.this, R.raw.background_sound);
+    mediaPlayer.setLooping(true);
+    mediaPlayer.start();
 
 }//end method
 

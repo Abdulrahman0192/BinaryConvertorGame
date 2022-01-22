@@ -136,7 +136,7 @@
         <View
             android:id="@+id/shine"
             android:layout_width="35dp"
-            android:layout_height="400dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/bg_shine"
             android:rotation="6" />
 
@@ -183,9 +183,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692">
+        app:layout_constraintVertical_bias="0.693">
 
     </TextView>
 
