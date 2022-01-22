@@ -227,8 +227,8 @@ private void GameMode() {
 
     submit.setOnClickListener(view->{
 
-        if(btn1.getText().toString().equals("0")&&btn2.getText().toString().equals("0")&&btn3.getText().toString().equals("0")&&btn4.getText().toString().equals("0")
-                &&btn5.getText().toString().equals("0")&&btn6.getText().toString().equals("0")&&btn7.getText().toString().equals("0")&&btn8.getText().toString().equals("0")){
+        if (submit.isPressed() && btn1.getText().toString().equals("0") && btn2.getText().toString().equals("0") && btn3.getText().toString().equals("0") && btn4.getText().toString().equals("0")
+                && btn5.getText().toString().equals("0") && btn6.getText().toString().equals("0") && btn7.getText().toString().equals("0") && btn8.getText().toString().equals("0")) {
 
             Toast.makeText(this, "There is no answer yet!!", Toast.LENGTH_SHORT).show();
 
@@ -329,6 +329,14 @@ private void GameEngine() {
             btn6.setText("0");
             btn7.setText("0");
             btn8.setText("0");
+            c1 = 0;
+            c2 = 0;
+            c3 = 0;
+            c4 = 0;
+            c5 = 0;
+            c6 = 0;
+            c7 = 0;
+            c8 = 0;
 
 
         }//end if
