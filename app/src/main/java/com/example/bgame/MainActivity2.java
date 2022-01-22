@@ -268,11 +268,21 @@ private void GameMode() {
 
                     life3.setColorFilter(Color.RED);
 
-                    Intent intent = new Intent(MainActivity2.this, MainActivity.class);
-                    intent.putExtra("points", increment);
-                    startActivity(intent);
-                    mediaPlayer.stop();
-                    finish();
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                Thread.sleep(900);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+
+                            Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                            intent.putExtra("points", increment);
+                            startActivity(intent);
+                            mediaPlayer.stop();
+                            finish();
+                        }
+                    }).start();
 
                 }//end else
 
