@@ -225,48 +225,59 @@ private void GameMode() {
 
     submit.setOnClickListener(view->{
 
-        result = c1 + c2 + c3 + c4 + c5 + c6 + c7 + c8;
+        if(btn1.getText().toString().equals("0")&&btn2.getText().toString().equals("0")&&btn3.getText().toString().equals("0")&&btn4.getText().toString().equals("0")
+                &&btn5.getText().toString().equals("0")&&btn6.getText().toString().equals("0")&&btn7.getText().toString().equals("0")&&btn8.getText().toString().equals("0")){
 
-        int convert = Integer.parseInt(GameNumber.getText().toString().trim());
+            Toast.makeText(this, "There is no answer yet!!", Toast.LENGTH_SHORT).show();
 
-        if (submit.isPressed() && result == convert) {
+        }//end if
 
-            Toast.makeText(this, "True", Toast.LENGTH_SHORT).show();
+        else {
 
-            increment += 10;
+            result = c1 + c2 + c3 + c4 + c5 + c6 + c7 + c8;
 
-            points.setText(String.valueOf(increment));
+            int convert = Integer.parseInt(GameNumber.getText().toString().trim());
 
-        } else {
+            if (submit.isPressed() && result == convert) {
 
-            Toast.makeText(this, "False", Toast.LENGTH_SHORT).show();
-            checker++;
-            if (checker == 1) {
+                Toast.makeText(this, "True", Toast.LENGTH_SHORT).show();
 
-                life1.setColorFilter(Color.RED);
+                increment += 10;
 
-            }//end if
+                points.setText(String.valueOf(increment));
 
-            else if (checker == 2) {
+            } else {
 
-                life2.setColorFilter(Color.RED);
+                Toast.makeText(this, "False", Toast.LENGTH_SHORT).show();
+                checker++;
+                if (checker == 1) {
+
+                    life1.setColorFilter(Color.RED);
+
+                }//end if
+
+                else if (checker == 2) {
+
+                    life2.setColorFilter(Color.RED);
+
+                }//end else
+
+                else {
+
+                    life3.setColorFilter(Color.RED);
+
+                    Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                    intent.putExtra("points", increment);
+                    startActivity(intent);
+                    finish();
+
+                }//end else
+
 
             }//end else
-
-            else {
-
-                life3.setColorFilter(Color.RED);
-
-                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
-                intent.putExtra("points", increment);
-                startActivity(intent);
-                finish();
-
-            }//end else
-
+            GameEngine();
 
         }//end else
-        GameEngine();
 
     });
 
@@ -296,6 +307,15 @@ private void GameEngine() {
             submit.setEnabled(true);
             next.setTextColor(Color.BLACK);
             submit.setTextColor(Color.WHITE);
+
+            btn1.setText("0");
+            btn2.setText("0");
+            btn3.setText("0");
+            btn4.setText("0");
+            btn5.setText("0");
+            btn6.setText("0");
+            btn7.setText("0");
+            btn8.setText("0");
 
 
         }//end if
