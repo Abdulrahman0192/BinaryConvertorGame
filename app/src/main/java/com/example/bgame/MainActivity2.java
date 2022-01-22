@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import es.dmoral.toasty.Toasty;
+
 public class MainActivity2 extends AppCompatActivity {
 
 
@@ -242,19 +244,19 @@ private void GameMode() {
 
             if (submit.isPressed() && result == convert) {
 
-                Toast.makeText(this, "True", Toast.LENGTH_SHORT).show();
+                Toasty.success(this, "Correct!", Toasty.LENGTH_SHORT).show();
 
-                increment += random.nextInt(10)+1;
+                increment += random.nextInt(10) + 1;
 
                 points.setText(String.valueOf(increment));
 
             } else {
 
-                Toast.makeText(this, "False", Toast.LENGTH_SHORT).show();
+                Toasty.error(this, "Wrong!!", Toasty.LENGTH_SHORT).show();
                 checker++;
                 if (checker == 1) {
-
                     life1.setColorFilter(Color.RED);
+
 
                 }//end if
 
@@ -268,20 +270,18 @@ private void GameMode() {
 
                     life3.setColorFilter(Color.RED);
 
-                    new Thread(new Runnable() {
-                        public void run() {
-                            try {
-                                Thread.sleep(900);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-                            Intent intent = new Intent(MainActivity2.this, MainActivity.class);
-                            intent.putExtra("points", increment);
-                            startActivity(intent);
-                            mediaPlayer.stop();
-                            finish();
+                    new Thread(()->{
+                        try {
+                            Thread.sleep(900);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
                         }
+
+                        Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                        intent.putExtra("points", increment);
+                        startActivity(intent);
+                        mediaPlayer.stop();
+                        finish();
                     }).start();
 
                 }//end else
