@@ -244,7 +244,7 @@ private void GameMode() {
 
                 Toast.makeText(this, "True", Toast.LENGTH_SHORT).show();
 
-                increment += 10;
+                increment += random.nextInt(10)+1;
 
                 points.setText(String.valueOf(increment));
 
