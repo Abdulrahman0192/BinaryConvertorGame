@@ -1,4 +1,4 @@
-package com.example.bgame;
+package com.BinaryToDecimal.bgame;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

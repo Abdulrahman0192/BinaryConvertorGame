@@ -1,4 +1,4 @@
-package com.example.bgame;
+package com.BinaryToDecimal.bgame;
 
 import android.content.Intent;
 import android.graphics.Color;

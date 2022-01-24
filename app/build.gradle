@@ -7,11 +7,11 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.bgame"
+        applicationId "com.BinaryToDecimal.bgame"
         minSdkVersion 16
         targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "3.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

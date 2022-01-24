@@ -1,10 +1,12 @@
-package com.example.bgame;
+package com.BinaryToDecimal.bgame;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -24,11 +26,11 @@ private ImageView twitter_account, instagram_account;
 private long onBackState = 0;
 
 
+
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-
     getting_ID();
     social_media();
     handling_animation();
